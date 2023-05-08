@@ -7,11 +7,11 @@ export default function CaesarCipher() {
   const [shiftAmount, setShiftAmount] = useState(0);
   const [isEncryptMode, setIsEncryptMode] = useState(true);
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: any) => {
     setInputText(event.target.value);
   };
 
-  const handleShiftAmountChange = (event) => {
+  const handleShiftAmountChange = (event:any) => {
     setShiftAmount(Number(event.target.value));
   };
 
@@ -25,11 +25,11 @@ export default function CaesarCipher() {
     setOutputText(caesarCipher(inputText, shiftAmount, false));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event:any) => {
     event.preventDefault();
   };
 
-  const caesarCipher = (text, shift, isEncrypt) => {
+  const caesarCipher = (text: string, shift: number, isEncrypt: boolean) => {
     let result = '';
     let shiftFactor = isEncrypt ? shift : -shift;
 
